@@ -38,6 +38,8 @@ var sampleRightSubtree = {
 	}
 };
 
+var NODE_HEIGHT = 18;
+
 /* parent - parent div element, subtree - part of the json tree file */
 function subtreeGenerator(parent, subtree) {
 
@@ -48,6 +50,8 @@ function subtreeGenerator(parent, subtree) {
 
 	var childContainer = document.createElement("div");
 	childContainer.setAttribute("class", "child-container");
+
+	var subnodes = 0;
 
 	for (key in subtree) {
 		var value = subtree[key];
@@ -60,7 +64,7 @@ function subtreeGenerator(parent, subtree) {
 			var textNode = document.createTextNode(key); 
 			child.appendChild(textNode);
 			childSubContainer.appendChild(child);
-			subtreeGenerator(childSubContainer, value);
+			subnodes += subtreeGenerator(childSubContainer, value);
 			childContainer.appendChild(childSubContainer);
 		} else {
 			var child = document.createElement("div");
@@ -68,12 +72,17 @@ function subtreeGenerator(parent, subtree) {
 			var textNode = document.createTextNode(value); 
 			child.appendChild(textNode);
 			childContainer.appendChild(child);
+			subnodes++;
 		}
 	}
 	
-	
+	connectorTextNode.nodeValue = subnodes;
+	connectorContainer.style.height = (subnodes * NODE_HEIGHT) + "px";
+
 	parent.appendChild(connectorContainer);
 	parent.appendChild(childContainer);
+
+	return subnodes;
 }
 
 var parentElement = document.getElementById("generator-parent");
