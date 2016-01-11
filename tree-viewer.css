@@ -1,0 +1,83 @@
+.main-container {
+	height: 300px;
+	width: 800px;
+	/* border: 1px solid #ff0000; */
+	padding: 5px;
+}
+
+.column-container {
+	height: 250px;
+	width: 200px;
+	/* border: 1px solid #0000ff; */
+	padding: 5px;
+	overflow: auto;
+	float: left;
+}
+
+.element-container {
+	/*
+	height: 500px;
+	width: 800px;
+	*/
+	/*border: 1px solid #00ff00; */
+	padding: 5px;
+}
+
+.special {
+	position: absolute;
+	top: 50px;
+}
+
+/*
+
+16 * 28 = 448
+Vertically 110px
+*/
+
+.main-tree-container {
+	/*float: left;
+	display: inline;*/
+	background-color: #ff0000;
+}
+
+.left-children-container {
+	float: left;
+	/* display: inline;*/
+	background-color: #00ff00;
+}
+
+.root-container {
+	float: left;
+	/* display: inline;*/
+	background-color: #0000ff;
+}
+
+.right-children-container {
+	float: left;
+	/* display: inline;*/
+	background-color: #ff8080;
+	position: relative;
+}
+
+.connector-container {
+	float: left;
+	/* display: inline;*/
+	background-color: #ffa00a;
+}
+
+.child-container {
+	float: left;
+	display: inline;
+	background-color: #a0a0ff;
+}
+
+.child {
+	background-color: #a0ffa0;
+	/* display: inline;*/
+}
+
+.child-parent {
+	background-color: #a0ffa0;
+	float: left;
+	/* display: inline;*/
+}
